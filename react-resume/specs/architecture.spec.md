@@ -3,6 +3,7 @@ name: Application Architecture
 description: High-level architecture of the React + TypeScript resume application, covering technology choices, project structure, data flow, and component relationships.
 targets:
   - ../src/**/*.tsx
+  - ../src/**/*.ts
   - ../src/index.css
   - ../index.html
   - ../vite.config.js
@@ -15,6 +16,8 @@ targets:
 ## Overview
 
 A single-page resume application built with **React 19** and **TypeScript**, bundled by **Vite**. The application renders a pixel-perfect, printable A4 résumé with runtime bilingual support (English / Brazilian Portuguese) managed exclusively via React Context — no routing, no server, no external i18n library.
+
+All resume content is declared as typed data in `src/data/` — no strings are hardcoded in components. Adding or reordering a section requires only changes to the data layer.
 
 ## Technology Stack
 
@@ -31,28 +34,36 @@ A single-page resume application built with **React 19** and **TypeScript**, bun
 
 ```
 react-resume/
-├── index.html                    # HTML shell — document title, favicon, #root mount
-├── vite.config.js                # Vite configuration
-├── tsconfig.json                 # TypeScript compiler (bundler mode, strict, react-jsx)
-├── tessl.json                    # Tessl tile manifest
-├── specs/                        # ← Spec-driven development specs (this folder)
-│   ├── architecture.spec.md      # This file
+├── index.html                       # HTML shell — document title, favicon, #root mount
+├── vite.config.js                   # Vite configuration
+├── tsconfig.json                    # TypeScript compiler (bundler mode, strict, react-jsx)
+├── tessl.json                       # Tessl tile manifest
+├── specs/                           # ← Spec-driven development specs (this folder)
+│   ├── architecture.spec.md         # This file
 │   ├── app-shell.spec.md
 │   ├── language-context.spec.md
 │   ├── language-toggle.spec.md
-│   └── resume-page.spec.md
+│   ├── resume-page.spec.md
+│   ├── resume-data.spec.md          # Data model + i18n dictionary spec
+│   └── section-components.spec.md  # SectionHeader, BulletList, ExperienceEntryBlock spec
 ├── public/
-│   ├── header_logo.png           # Header stripe image
-│   └── footer_illustration.png   # Bottom-of-page decorative illustration
+│   ├── header_logo.png              # Header stripe image
+│   └── footer_illustration.png     # Bottom-of-page decorative illustration
 └── src/
-    ├── main.tsx                  # ReactDOM.createRoot — app bootstrap
-    ├── App.tsx                   # Root component — composes provider + children
-    ├── index.css                 # Global styles (screen + @media print)
+    ├── main.tsx                     # ReactDOM.createRoot — app bootstrap
+    ├── App.tsx                      # Root component — composes provider + children
+    ├── index.css                    # Global styles (screen + @media print)
+    ├── data/                        # ← Content & i18n data layer
+    │   ├── i18n.ts                  # All translation key/value pairs (en + pt)
+    │   └── resumeData.ts            # Typed section data model + resumeSections[]
     ├── context/
-    │   └── LanguageContext.tsx   # i18n state, t() function, useLanguage hook
+    │   └── LanguageContext.tsx      # i18n state, t() function, useLanguage hook
     └── components/
-        ├── LanguageToggle.tsx    # EN / PT switcher buttons (hidden on print)
-        └── ResumePage.tsx        # Full résumé document layout
+        ├── LanguageToggle.tsx       # EN / PT switcher buttons (hidden on print)
+        ├── ResumePage.tsx           # Declarative resume layout (maps over resumeSections)
+        ├── SectionHeader.tsx        # Purple-bordered section title box
+        ├── BulletList.tsx           # Translated bullet list (skills-list / activities-list)
+        └── ExperienceEntryBlock.tsx # Full employer block (company, roles, activities)
 ```
 
 ## Component Hierarchy & Data Flow
@@ -60,15 +71,30 @@ react-resume/
 ```
 main.tsx
   └── <App />
-        └── <LanguageProvider>        (LanguageContext.tsx)
+        └── <LanguageProvider>       (LanguageContext.tsx — reads from data/i18n.ts)
               │   state: lang ('en' | 'pt')
               │   fn:    t(key) → string
               │
-              ├── <LanguageToggle />   reads lang, calls setLang
-              └── <ResumePage />       calls t(key) for every text node
+              ├── <LanguageToggle /> reads lang, calls setLang
+              └── <ResumePage />     maps resumeSections[] → <ResumeSection>
+                    ├── <SectionHeader titleKey />
+                    ├── <BulletList items />
+                    └── <ExperienceEntryBlock entry />
+                          └── <BulletList items className="activities-list" />
 ```
 
-The `LanguageProvider` is the sole owner of language state. Components never manage language state locally — they only read from or write to the context.
+## Data → Render Pipeline
+
+```
+src/data/i18n.ts          → LanguageContext.t(key) → string
+src/data/resumeData.ts    → resumeSections: AnySection[]
+                          → ResumePage maps each section to a component
+                          → components call t(key) for every text node
+```
+
+Adding a **new section**: add keys to `i18n.ts`, add an `AnySection` entry to `resumeSections`. No component changes needed.
+
+Adding a **new section type**: add a new interface to `resumeData.ts`, a new component, and a case in the `ResumeSection` switch inside `ResumePage.tsx`.
 
 ## Styling Architecture
 
@@ -78,22 +104,16 @@ The `LanguageProvider` is the sole owner of language state. Components never man
 2. **Screen Styles** — `.page`, `.header-stripe`, `.footer-container`, section layout, language toggle.
 3. **Print Styles** (`@media print`) — resets margins, fixes footer illustration to `bottom: 0`, hides toggle buttons and body background.
 
-No CSS modules, no CSS-in-JS, no utility frameworks. All class names map directly to elements in `ResumePage.tsx`.
+No CSS modules, no CSS-in-JS, no utility frameworks. All class names map directly to elements in the component tree.
 
 ## i18n Architecture
 
-All translation keys and values live inside `LanguageContext.tsx` in a single typed `I18nDictionary` object. There are no separate translation files. Adding a new translatable string requires:
+All translation keys and values live in `src/data/i18n.ts` as a single typed `I18nDictionary` object. `LanguageContext` imports and exposes them via `t(key)`. Adding a new translatable string requires:
 
-1. Adding a new `KEY: { en: '...', pt: '...' }` entry to the dictionary.
-2. Using `t('KEY')` at the call site in the component.
-
-## No-Build-Required Assets
-
-Images are placed in `public/` and referenced by absolute path (`/header_logo.png`, `/footer_illustration.png`). Vite serves them verbatim with no content-hash renaming, making the paths stable across rebuilds.
+1. Adding a `KEY: { en: '...', pt: '...' }` entry to `i18n.ts`.
+2. Using `t('KEY')` via the appropriate component prop or direct call.
 
 ## Print / PDF Behaviour
-
-The resume is designed to print cleanly to a single A4/Letter page with no browser UI artifacts:
 
 - Language toggle buttons are hidden via `@media print`.
 - `@page` margins are reset to `0`.

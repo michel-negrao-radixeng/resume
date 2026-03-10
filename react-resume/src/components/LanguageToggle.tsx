@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { useLanguage } from '../context/LanguageContext';
 
-export default function LanguageToggle(): JSX.Element {
+export default function LanguageToggle() {
     const { lang, setLang } = useLanguage();
 
     return (
