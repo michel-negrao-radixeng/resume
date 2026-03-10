@@ -1,0 +1,26 @@
+{
+  "name": "project",
+  "dependencies": {
+    "tessl-labs/spec-driven-development": {
+      "version": "1.0.5"
+    },
+    "tessl/npm-react": {
+      "version": "19.2.0"
+    },
+    "tessl/npm-vite": {
+      "version": "7.3.0"
+    },
+    "tessl/npm-typescript": {
+      "version": "5.9.1"
+    },
+    "tessl/npm-eslint": {
+      "version": "9.34.0"
+    },
+    "tessl/npm-react-dom": {
+      "version": "19.2.0"
+    },
+    "tessl/npm-vitejs--plugin-react": {
+      "version": "5.1.0"
+    }
+  }
+}

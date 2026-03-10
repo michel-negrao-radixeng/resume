@@ -1,0 +1,111 @@
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+
+type Language = 'en' | 'pt';
+
+interface I18nDictionary {
+    [key: string]: {
+        en: string;
+        pt: string;
+    };
+}
+
+const i18nData: I18nDictionary = {
+    ABOUT_ME: { en: "ABOUT ME", pt: "SOBRE MIM" },
+    ABOUT_ME_DESC: {
+        en: "I am a Full-Stack Software Developer specializing in data-driven application engineering. My last three years have been dedicated to crafting end-to-end solutions, building dynamic user interfaces with React/TypeScript and scalable services with Python. I hold hands-on expertise in industrial data modeling and API integration using Cognite Data Fusion (FDM), complemented by strong skills in SQL, Docker, and Azure DevOps.",
+        pt: "Sou um Desenvolvedor de Software Full-Stack especializado em engenharia de aplicações web usando dados. Meus últimos três anos foram dedicados à criação de soluções de ponta a ponta, construindo interfaces de usuário dinâmicas com React/TypeScript e serviços escaláveis com Python. Tenho experiência prática em modelagem de dados industriais e integração de API usando Cognite Data Fusion (FDM), complementada por fortes habilidades em SQL, Docker e Azure DevOps."
+    },
+    MAIN_QUALIFICATIONS: { en: "MAIN QUALIFICATIONS", pt: "PRINCIPAIS QUALIFICAÇÕES" },
+    PROFESSIONAL_EXPERIENCE: { en: "PROFESSIONAL EXPERIENCE", pt: "EXPERIÊNCIA PROFISSIONAL" },
+    COMPANY_RADIX: { en: "RADIX – Engineering and Software", pt: "RADIX – Engenharia e Software" },
+    JOB_SPEC_1: { en: "Specialist I - Developer | ", pt: "Especialista I - Desenvolvedor | " },
+    DATE_FEB_26: { en: "Feb 2026 – Present", pt: "Fev 2026 – Presente" },
+    JOB_SENIOR: { en: "Senior Developer | ", pt: "Desenvolvedor Sênior | " },
+    DATE_NOV_23: { en: "Nov 2023 – Jan 2026", pt: "Nov 2023 – Jan 2026" },
+    ACTIVITIES_HEADING: { en: "Activities:", pt: "Atividades:" },
+    ACT_RADIX_1: { en: "Design and implement data modeling in Cognite Fusion Data Model (FDM)", pt: "Projetar e implementar modelagem de dados no Cognite Fusion Data Model (FDM)" },
+    ACT_RADIX_2: { en: "Development of REST API endpoints using Cognite Python SDK.", pt: "Desenvolvimento de endpoints de API REST usando Cognite Python SDK." },
+    ACT_RADIX_3: { en: "Creation of a dynamic and responsive user interface using React.js", pt: "Criação de interface de usuário dinâmica e responsiva usando React.js" },
+    ACT_RADIX_4: { en: "Collaborated with Business Analysts to assess the feasibility of proposed solutions and address project requirements.", pt: "Colaborei com Analistas de Negócios para avaliar a viabilidade das soluções propostas e atender aos requisitos do projeto." },
+    ACT_RADIX_5: { en: "Development of REST API with NestJS", pt: "Desenvolvimento de API REST com NestJS" },
+    ACT_RADIX_6: { en: "Development of mobile screens using React Native", pt: "Desenvolvimento de telas mobile usando React Native" },
+    ACT_RADIX_7: { en: "Accelerated delivery with AI assisted IDE (Cursor)", pt: "Aceleração de entrega com IDE auxiliada por IA (Cursor)" },
+    MAIN_PROJECTS_HEADING: { en: "Main Projects:", pt: "Principais Projetos:" },
+    PROJ_1: { en: "Celanese - Digitization project", pt: "Celanese - Projeto de digitalização" },
+    PROJ_2: { en: "Radix – JO/AI", pt: "Radix – JO/AI" },
+    PROJ_3: { en: "Featbank – web app and mobile app", pt: "Featbank – web app e aplicativo mobile" },
+    COMPANY_ANP: { en: "ANP - National Agency of Petroleum, Natural Gas and Biofuels", pt: "ANP - Agência Nacional do Petróleo, Gás Natural e Biocombustíveis" },
+    JOB_RESEARCHER: { en: "Researcher | ", pt: "Pesquisador | " },
+    DATE_JUN_20: { en: "Jun 2020 – Jul 2022", pt: "Jun 2020 – Jul 2022" },
+    ACT_ANP_1: { en: "Survey of the state of the art on Reinforcement Learning (RL) applied to systems control;", pt: "Pesquisa do estado da arte sobre Aprendizado por Reforço (RL) aplicado ao controle de sistemas;" },
+    ACT_ANP_2: { en: "Proposition of a reward architecture for the agent/controller applicable to the artificial elevation of oil and gas by Electric Submersible Pumps (ESP);", pt: "Proposição de uma arquitetura de recompensa para o agente/controlador aplicável à elevação artificial de óleo e gás por Bombas Submersíveis Elétricas (BCS);" },
+    ACT_ANP_3: { en: "Implementation of the advanced control systems in the ESP oil lifting pilot plant using MATLAB/Simulink.", pt: "Implementação dos sistemas avançados de controle na planta piloto de elevação de petróleo BCS usando MATLAB/Simulink." },
+    COMPANY_KLABIN: { en: "KLABIN – Pulp and Paper", pt: "KLABIN – Celulose e Papel" },
+    JOB_AUTO: { en: "Automation Technical Assistant | ", pt: "Assistente Técnico de Automação | " },
+    DATE_JUL_18: { en: "Jul 2018 - Aug 2022", pt: "Jul 2018 - Ago 2022" },
+    ACT_KLA_1: { en: "Act in the creation of solutions aimed at monitoring the production process, quality maintenance and failure prevention, through the unit's tools (PI System; Excel and Power BI).", pt: "Atuar na criação de soluções voltadas para o monitoramento do processo produtivo, manutenção da qualidade e prevenção de falhas, através das ferramentas da unidade (PI System, Excel e Power BI)." },
+    ACT_KLA_2: { en: "Carry out the monitoring of the main displays of information, support facilitators in the area in resolving difficulties with created systems.", pt: "Realizar o monitoramento dos principais painéis de indicadores, apoiar facilitadores da área na resolução de dificuldades com sistemas criados." },
+    ACT_KLA_3: { en: "Be the facilitator of the unit's OEE system, ensuring good operation.", pt: "Ser o facilitador do sistema OEE da unidade, garantindo sua boa operação." },
+    ACT_KLA_4: { en: "Responsible for the unit's PI System in the implementation of new demands, maintenance of the base conditions of the system (Software and Hardware) and needs for updates and/or upgrades.", pt: "Responsável pelo PI System da unidade na implementação de novas demandas, manutenção das condições base do sistema (Software e Hardware) e necessidades de atualizações e/ou upgrades." },
+    ACT_KLA_5: { en: "Ensure with the automation team the correct application and integration of systems.", pt: "Assegurar junto à equipe de automação a correta aplicação e integração dos sistemas." },
+    ACADEMIC_BACKGROUND: { en: "ACADEMIC BACKGROUND", pt: "FORMAÇÃO ACADÊMICA" },
+    EDU_1: { en: "Master’s degree in Systems Engineering – University of São Paulo, Brazil – 2025 (in progress)", pt: "Mestrado em Engenharia de Sistemas – Universidade de São Paulo, Brasil – 2025 (em andamento)" },
+    EDU_2: { en: "MBA in Industrial Automation | USP, Brazil – 2020", pt: "MBA em Automação Industrial | USP, Brasil – 2020" },
+    EDU_3: { en: "Post Graduation in Control and Automation Engineering | Mauá Institute of Technology, Brazil – 2016", pt: "Pós-graduação em Engenharia de Controle e Automação | Instituto Mauá de Tecnologia, Brasil – 2016" },
+    EDU_4: { en: "Bachelor of Automation and Control Engineering | Universidade Federal da Bahia (UFBA), Brazil – 2010", pt: "Bacharelado em Engenharia de Controle e Automação | Universidade Federal da Bahia (UFBA), Brasil – 2010" },
+    EDU_5: { en: "Technical course in electromechanics | Instituto Federal da Bahia (IFBA), Brazil - 2004", pt: "Curso técnico em eletromecânica | Instituto Federal da Bahia (IFBA), Brasil - 2004" },
+    CERTIFICATIONS: { en: "CERTIFICATIONS", pt: "CERTIFICAÇÕES" },
+    CERT_1: { en: "Process Kaizen Engineering – Maintenance", pt: "Processo de Engenharia Kaizen – Manutenção" },
+    CERT_2: { en: "Process Kaizen Engineering – Quality", pt: "Processo de Engenharia Kaizen – Qualidade" },
+    CERT_3: { en: "PI System Infrastructure Specialist", pt: "Especialista em Infraestrutura PI System" },
+    CERT_4: { en: "PI System Installation Specialist", pt: "Especialista em Instalação PI System" },
+    CERT_5: { en: "AWS Cloud Practitioner", pt: "AWS Cloud Practitioner" },
+    CERT_6: { en: "MiniTab Certificate", pt: "MiniTab Certificate" },
+    AWARDS_AND_PUBLICATIONS: { en: "AWARDS AND PUBLICATIONS", pt: "PRÊMIOS E PUBLICAÇÕES" },
+    AWARDS_1: { en: "Technip’s “Jacques Franquelin” Award at the Innovation Global Contest, in 2013: “YouTube for Engineering”", pt: "Prêmio “Jacques Franquelin” da Technip no Innovation Global Contest, em 2013: “YouTube for Engineering”" },
+    LANGUAGES: { en: "LANGUAGES", pt: "IDIOMAS" },
+    LANG_1: { en: "Portuguese – Native", pt: "Português – Nativo" },
+    LANG_2: { en: "English – Fluent", pt: "Inglês – Fluente" },
+    LANG_3: { en: "Spanish – Upper Intermediate", pt: "Espanhol – Intermediário Superior" }
+};
+
+interface LanguageContextProps {
+    lang: Language;
+    setLang: (lang: Language) => void;
+    t: (key: string) => string;
+}
+
+const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
+
+interface LanguageProviderProps {
+    children: ReactNode;
+}
+
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+    const [lang, setLang] = useState<Language>('en');
+
+    useEffect(() => {
+        setLang(navigator.language.startsWith('pt') ? 'pt' : 'en');
+    }, []);
+
+    const t = (key: string): string => {
+        if (i18nData[key] && i18nData[key][lang]) {
+            return i18nData[key][lang];
+        }
+        return key;
+    };
+
+    return (
+        <LanguageContext.Provider value={{ lang, setLang, t }}>
+            {children}
+        </LanguageContext.Provider>
+    );
+};
+
+export const useLanguage = (): LanguageContextProps => {
+    const context = useContext(LanguageContext);
+    if (!context) {
+        throw new Error('useLanguage must be used within a LanguageProvider');
+    }
+    return context;
+};
