@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="resume.css?v=2">
 </head>
 <body>
+    <div class="lang-toggle">
+        <button onclick="setLang('en')" class="lang-btn" id="btn-en">🇺🇸 EN</button>
+        <button onclick="setLang('pt')" class="lang-btn" id="btn-pt">🇧🇷 PT</button>
+    </div>
     <div class="page">
         <table>
             <thead><tr><td><div class="header-stripe"><img src="./header_logo.png" alt="logo"></div></td></tr></thead>
             <tbody><tr><td><div class="content">
                 <div class="name-title">MICHEL NEGRÃO</div>
                 <div class="horizontal-line"></div>
-                <div class="section-box">ABOUT ME</div>
-                <p>I am a Full-Stack Software Developer specializing in data-driven application engineering. My last three years have been dedicated to crafting end-to-end solutions, building dynamic user interfaces with React/TypeScript and scalable services with Python. I hold hands-on expertise in industrial data modeling and API integration using Cognite Data Fusion (FDM), complemented by strong skills in SQL, Docker, and Azure DevOps.</p>
-                <div class="section-box">MAIN QUALIFICATIONS</div>
+                <div class="section-box" data-i18n-key="ABOUT_ME">ABOUT ME</div>
+                <p data-i18n-key="ABOUT_ME_DESC">I am a Full-Stack Software Developer specializing in data-driven application engineering. My last three years have been dedicated to crafting end-to-end solutions, building dynamic user interfaces with React/TypeScript and scalable services with Python. I hold hands-on expertise in industrial data modeling and API integration using Cognite Data Fusion (FDM), complemented by strong skills in SQL, Docker, and Azure DevOps.</p>
+                <div class="section-box" data-i18n-key="MAIN_QUALIFICATIONS">MAIN QUALIFICATIONS</div>
                 <ul class="skills-list">
                     <li>Cognite Data Fusion</li>
                     <li>JavaScript – React / Typescript / NextJS / NestJS / React Native</li>
@@ -25,75 +29,92 @@
                     <li>Docker</li>
                     <li>Linux</li>
                 </ul>
-                <div class="section-box">PROFESSIONAL EXPERIENCE</div>
-                <div class="company-header">RADIX – Engineering and Software</div>
-                <div class="job-title-row">Specialist I - Developer | <span class="job-date">Feb 2026 – Present</span></div>
-                <div class="job-title-row">Senior Developer | <span class="job-date">Nov 2023 – Jan 2026</span></div>
-                <div class="activities-heading">Activities:</div>
+                <div class="section-box" data-i18n-key="PROFESSIONAL_EXPERIENCE">PROFESSIONAL EXPERIENCE</div>
+                <div class="company-header" data-i18n-key="COMPANY_RADIX">RADIX – Engineering and Software</div>
+                <div class="job-title-row" data-i18n-key="JOB_SPEC_1">Specialist I - Developer | <span class="job-date" data-i18n-key="DATE_FEB_26">Feb 2026 – Present</span></div>
+                <div class="job-title-row" data-i18n-key="JOB_SENIOR">Senior Developer | <span class="job-date" data-i18n-key="DATE_NOV_23">Nov 2023 – Jan 2026</span></div>
+                <div class="activities-heading" data-i18n-key="ACTIVITIES_HEADING">Activities:</div>
                 <ul class="activities-list">
-                    <li>Design and implement data modeling in Cognite Fusion Data Model (FDM)</li>
-                    <li>Development of REST API endpoints using Cognite Python SDK.</li>
-                    <li>Creation of a dynamic and responsive user interface using React.js</li>
-                    <li>Collaborated with Business Analysts to assess the feasibility of proposed solutions and address project requirements.</li>
-                    <li>Development of REST API with NestJS</li>
-                    <li>Development of mobile screens using React Native</li>
-                    <li>Accelerated delivery with AI assisted IDE (Cursor)</li>
+                    <li data-i18n-key="ACT_RADIX_1">Design and implement data modeling in Cognite Fusion Data Model (FDM)</li>
+                    <li data-i18n-key="ACT_RADIX_2">Development of REST API endpoints using Cognite Python SDK.</li>
+                    <li data-i18n-key="ACT_RADIX_3">Creation of a dynamic and responsive user interface using React.js</li>
+                    <li data-i18n-key="ACT_RADIX_4">Collaborated with Business Analysts to assess the feasibility of proposed solutions and address project requirements.</li>
+                    <li data-i18n-key="ACT_RADIX_5">Development of REST API with NestJS</li>
+                    <li data-i18n-key="ACT_RADIX_6">Development of mobile screens using React Native</li>
+                    <li data-i18n-key="ACT_RADIX_7">Accelerated delivery with AI assisted IDE (Cursor)</li>
                 </ul>
-                <div class="activities-heading">Main Projects:</div>
+                <div class="activities-heading" data-i18n-key="MAIN_PROJECTS_HEADING">Main Projects:</div>
                 <ul class="activities-list">
-                    <li>Celanese - Digitization project</li>
-                    <li>Radix – JO/AI</li>
-                    <li>Featbank – web app and mobile app</li>
+                    <li data-i18n-key="PROJ_1">Celanese - Digitization project</li>
+                    <li data-i18n-key="PROJ_2">Radix – JO/AI</li>
+                    <li data-i18n-key="PROJ_3">Featbank – web app and mobile app</li>
                 </ul>
-                <div class="company-header" style="margin-top: 25px;">ANP - National Agency of Petroleum, Natural Gas and Biofuels</div>
-                <div class="job-title-row">Researcher | <span class="job-date">Jun 2020 – Jul 2022</span></div>
-                <div class="activities-heading">Activities:</div>
+                <div class="company-header" style="margin-top: 25px;" data-i18n-key="COMPANY_ANP">ANP - National Agency of Petroleum, Natural Gas and Biofuels</div>
+                <div class="job-title-row" data-i18n-key="JOB_RESEARCHER">Researcher | <span class="job-date" data-i18n-key="DATE_JUN_20">Jun 2020 – Jul 2022</span></div>
+                <div class="activities-heading" data-i18n-key="ACTIVITIES_HEADING">Activities:</div>
                 <ul class="activities-list">
-                    <li>Survey of the state of the art on Reinforcement Learning (RL) applied to systems control;</li>
-                    <li>Proposition of a reward architecture for the agent/controller applicable to the artificial elevation of oil and gas by Electric Submersible Pumps (ESP);</li>
-                    <li>Implementation of the advanced control systems in the ESP oil lifting pilot plant using MATLAB/Simulink.</li>
+                    <li data-i18n-key="ACT_ANP_1">Survey of the state of the art on Reinforcement Learning (RL) applied to systems control;</li>
+                    <li data-i18n-key="ACT_ANP_2">Proposition of a reward architecture for the agent/controller applicable to the artificial elevation of oil and gas by Electric Submersible Pumps (ESP);</li>
+                    <li data-i18n-key="ACT_ANP_3">Implementation of the advanced control systems in the ESP oil lifting pilot plant using MATLAB/Simulink.</li>
                 </ul>
-                <div class="company-header" style="margin-top: 25px;">KLABIN – Pulp and Paper</div>
-                <div class="job-title-row">Automation Technical Assistant | <span class="job-date">Jul 2018 - Aug 2022</span></div>
-                <div class="activities-heading">Activities:</div>
+                <div class="company-header" style="margin-top: 25px;" data-i18n-key="COMPANY_KLABIN">KLABIN – Pulp and Paper</div>
+                <div class="job-title-row" data-i18n-key="JOB_AUTO">Automation Technical Assistant | <span class="job-date" data-i18n-key="DATE_JUL_18">Jul 2018 - Aug 2022</span></div>
+                <div class="activities-heading" data-i18n-key="ACTIVITIES_HEADING">Activities:</div>
                 <ul class="activities-list">
-                    <li>Act in the creation of solutions aimed at monitoring the production process, quality maintenance and failure prevention, through the unit's tools (PI System; Excel and Power BI).</li>
-                    <li>Carry out the monitoring of the main displays of information, support facilitators in the area in resolving difficulties with created systems.</li>
-                    <li>Be the facilitator of the unit's OEE system, ensuring good operation.</li>
-                    <li>Responsible for the unit's PI System in the implementation of new demands, maintenance of the base conditions of the system (Software and Hardware) and needs for updates and/or upgrades.</li>
-                    <li>Ensure with the automation team the correct application and integration of systems.</li>
+                    <li data-i18n-key="ACT_KLA_1">Act in the creation of solutions aimed at monitoring the production process, quality maintenance and failure prevention, through the unit's tools (PI System; Excel and Power BI).</li>
+                    <li data-i18n-key="ACT_KLA_2">Carry out the monitoring of the main displays of information, support facilitators in the area in resolving difficulties with created systems.</li>
+                    <li data-i18n-key="ACT_KLA_3">Be the facilitator of the unit's OEE system, ensuring good operation.</li>
+                    <li data-i18n-key="ACT_KLA_4">Responsible for the unit's PI System in the implementation of new demands, maintenance of the base conditions of the system (Software and Hardware) and needs for updates and/or upgrades.</li>
+                    <li data-i18n-key="ACT_KLA_5">Ensure with the automation team the correct application and integration of systems.</li>
                 </ul>
-                <div class="section-box">ACADEMIC BACKGROUND</div>
+                <div class="section-box" data-i18n-key="ACADEMIC_BACKGROUND">ACADEMIC BACKGROUND</div>
                 <ul class="skills-list">
-                    <li>Master’s degree in Systems Engineering – University of São Paulo, Brazil – 2025 (in progress)</li>
-                    <li>MBA in Industrial Automation | USP, Brazil – 2020</li>
-                    <li>Post Graduation in Control and Automation Engineering | Mauá Institute of Technology, Brazil – 2016</li>
-                    <li>Bachelor of Automation and Control Engineering | Universidade Federal da Bahia (UFBA), Brazil – 2010</li>
-                    <li>Technical course in electromechanics | Instituto Federal da Bahia (IFBA), Brazil - 2004</li>
+                    <li data-i18n-key="EDU_1">Master’s degree in Systems Engineering – University of São Paulo, Brazil – 2025 (in progress)</li>
+                    <li data-i18n-key="EDU_2">MBA in Industrial Automation | USP, Brazil – 2020</li>
+                    <li data-i18n-key="EDU_3">Post Graduation in Control and Automation Engineering | Mauá Institute of Technology, Brazil – 2016</li>
+                    <li data-i18n-key="EDU_4">Bachelor of Automation and Control Engineering | Universidade Federal da Bahia (UFBA), Brazil – 2010</li>
+                    <li data-i18n-key="EDU_5">Technical course in electromechanics | Instituto Federal da Bahia (IFBA), Brazil - 2004</li>
                 </ul>
-                <div class="section-box">CERTIFICATIONS</div>
+                <div class="section-box" data-i18n-key="CERTIFICATIONS">CERTIFICATIONS</div>
                 <ul class="skills-list">
-                    <li>Process Kaizen Engineering – Maintenance</li>
-                    <li>Process Kaizen Engineering – Quality</li>
-                    <li>PI System Infrastructure Specialist</li>
-                    <li>PI System Installation Specialist</li>
-                    <li>AWS Cloud Practitioner</li>
-                    <li>MiniTab Certificate</li>
+                    <li data-i18n-key="CERT_1">Process Kaizen Engineering – Maintenance</li>
+                    <li data-i18n-key="CERT_2">Process Kaizen Engineering – Quality</li>
+                    <li data-i18n-key="CERT_3">PI System Infrastructure Specialist</li>
+                    <li data-i18n-key="CERT_4">PI System Installation Specialist</li>
+                    <li data-i18n-key="CERT_5">AWS Cloud Practitioner</li>
+                    <li data-i18n-key="CERT_6">MiniTab Certificate</li>
                 </ul>
-                <div class="section-box">AWARDS AND PUBLICATIONS</div>
+                <div class="section-box" data-i18n-key="AWARDS_AND_PUBLICATIONS">AWARDS AND PUBLICATIONS</div>
                 <ul class="skills-list">
-                    <li>Technip’s “Jacques Franquelin” Award at the Innovation Global Contest, in 2013: “YouTube for Engineering”</li>
+                    <li data-i18n-key="AWARDS_1">Technip’s “Jacques Franquelin” Award at the Innovation Global Contest, in 2013: “YouTube for Engineering”</li>
                 </ul>
-                <div class="section-box">LANGUAGES</div>
+                <div class="section-box" data-i18n-key="LANGUAGES">LANGUAGES</div>
                 <ul class="skills-list">
-                    <li>Portuguese – Native</li>
-                    <li>English – Fluent</li>
-                    <li>Spanish – Upper Intermediate</li>
+                    <li data-i18n-key="LANG_1">Portuguese – Native</li>
+                    <li data-i18n-key="LANG_2">English – Fluent</li>
+                    <li data-i18n-key="LANG_3">Spanish – Upper Intermediate</li>
                 </ul>
             </div></td></tr></tbody>
             <tfoot><tr><td><!-- Spacer for print footer --></td></tr></tfoot>
         </table>
         <div class="footer-container"><img src="./footer_illustration.png" alt="footer"></div>
     </div>
+    <script src="en.js"></script>
+    <script src="pt.js"></script>
+    <script>
+        function setLang(lang) {
+            const dictionary = lang === 'pt' ? langPT : langEN;
+            document.querySelectorAll('[data-i18n-key]').forEach(el => {
+                const key = el.getAttribute('data-i18n-key');
+                if (dictionary[key]) {
+                    el.innerHTML = dictionary[key];
+                }
+            });
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+        }
+        // Initialize based on browser language
+        setLang(navigator.language.startsWith('pt') ? 'pt' : 'en');
+    </script>
 </body>
 </html>

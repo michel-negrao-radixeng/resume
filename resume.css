@@ -20,6 +20,38 @@ body {
     print-color-adjust: exact;
 }
 
+.lang-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 1000;
+}
+
+.lang-btn {
+    background: white;
+    border: 1px solid var(--purple-theme);
+    color: var(--purple-theme);
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: "Lato", sans-serif;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.lang-btn:hover {
+    background: #f0ebf2;
+}
+
+.lang-btn.active {
+    background: var(--purple-theme);
+    color: white;
+}
+
 .page {
     width: 210mm;
     min-height: 297mm;
@@ -235,4 +267,7 @@ ul.activities-list li::before {
         padding: 0;
     }
 
+    .lang-toggle {
+        display: none !important;
+    }
 }
