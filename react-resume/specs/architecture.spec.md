@@ -57,9 +57,12 @@ react-resume/
     │   ├── i18n.ts                  # All translation key/value pairs (en + pt)
     │   └── resumeData.ts            # Typed section data model + resumeSections[]
     ├── context/
-    │   └── LanguageContext.tsx      # i18n state, t() function, useLanguage hook
+    │   ├── LanguageContext.tsx      # i18n state, t() function, useLanguage hook
+    │   └── ThemeContext.tsx         # Dark/light mode state, persistence, useTheme hook
     └── components/
         ├── LanguageToggle.tsx       # EN / PT switcher buttons (hidden on print)
+        ├── ThemeToggle.tsx          # Dark / Light switcher (hidden on print)
+        ├── PrintButton.tsx          # PDF download button (hidden on print)
         ├── ResumePage.tsx           # Declarative resume layout (maps over resumeSections)
         ├── SectionHeader.tsx        # Purple-bordered section title box
         ├── BulletList.tsx           # Translated bullet list (skills-list / activities-list)
@@ -71,16 +74,22 @@ react-resume/
 ```
 main.tsx
   └── <App />
-        └── <LanguageProvider>       (LanguageContext.tsx — reads from data/i18n.ts)
-              │   state: lang ('en' | 'pt')
-              │   fn:    t(key) → string
+        └── <ThemeProvider>          (ThemeContext.tsx — persists theme in localStorage)
+              │   state: theme ('light' | 'dark')
+              │   fn:    toggleTheme()
               │
-              ├── <LanguageToggle /> reads lang, calls setLang
-              └── <ResumePage />     maps resumeSections[] → <ResumeSection>
-                    ├── <SectionHeader titleKey />
-                    ├── <BulletList items />
-                    └── <ExperienceEntryBlock entry />
-                          └── <BulletList items className="activities-list" />
+              ├── <LanguageProvider> (LanguageContext.tsx — reads from data/i18n.ts)
+                    │   state: lang ('en' | 'pt')
+                    │   fn:    t(key) → string
+                    │
+                    ├── <LanguageToggle /> reads lang, calls setLang
+                    ├── <ThemeToggle />    reads theme, calls toggleTheme
+                    ├── <PrintButton />    calls window.print()
+                    └── <ResumePage />     maps resumeSections[] → <ResumeSection>
+                          ├── <SectionHeader titleKey />
+                          ├── <BulletList items />
+                          └── <ExperienceEntryBlock entry />
+                                └── <BulletList items className="activities-list" />
 ```
 
 ## Data → Render Pipeline
