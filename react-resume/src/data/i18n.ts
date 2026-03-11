@@ -7,69 +7,143 @@ export interface I18nDictionary {
 
 export const i18nData: I18nDictionary = {
     NAME: { en: "MICHEL NEGRÃO", pt: "MICHEL NEGRÃO" },
+    
+    // Core Sections
     ABOUT_ME: { en: "ABOUT ME", pt: "SOBRE MIM" },
-    ABOUT_ME_DESC: {
-        en: "I am a Full-Stack Software Developer specializing in data-driven application engineering. My last three years have been dedicated to crafting end-to-end solutions, building dynamic user interfaces with React/TypeScript and scalable services with Python. I hold hands-on expertise in industrial data modeling and API integration using Cognite Data Fusion (FDM), complemented by strong skills in SQL, Docker, and Azure DevOps.",
-        pt: "Sou um Desenvolvedor de Software Full-Stack especializado em engenharia de aplicações web usando dados. Meus últimos três anos foram dedicados à criação de soluções de ponta a ponta, construindo interfaces de usuário dinâmicas com React/TypeScript e serviços escaláveis com Python. Tenho experiência prática em modelagem de dados industriais e integração de API usando Cognite Data Fusion (FDM), complementada por fortes habilidades em SQL, Docker e Azure DevOps."
-    },
-    MAIN_QUALIFICATIONS: { en: "MAIN QUALIFICATIONS", pt: "PRINCIPAIS QUALIFICAÇÕES" },
-    QUAL_CDF: { en: "Cognite Data Fusion", pt: "Cognite Data Fusion" },
-    QUAL_JS: { en: "JavaScript – React / Typescript / NextJS / NestJS / React Native", pt: "JavaScript – React / Typescript / NextJS / NestJS / React Native" },
-    QUAL_PYTHON: { en: "Python", pt: "Python" },
-    QUAL_SQL: { en: "SQL – Relational / No-SQL", pt: "SQL – Relacional / No-SQL" },
-    QUAL_AZURE: { en: "Azure Devops", pt: "Azure Devops" },
-    QUAL_DOCKER: { en: "Docker", pt: "Docker" },
-    QUAL_LINUX: { en: "Linux", pt: "Linux" },
+    MAIN_QUALIFICATIONS: { en: "MAIN QUALIFICATIONS", pt: "PRINCIPAIS COMPETÊNCIAS" },
     PROFESSIONAL_EXPERIENCE: { en: "PROFESSIONAL EXPERIENCE", pt: "EXPERIÊNCIA PROFISSIONAL" },
-    COMPANY_RADIX: { en: "RADIX – Engineering and Software", pt: "RADIX – Engenharia e Software" },
-    JOB_SPEC_1: { en: "Specialist I - Developer | ", pt: "Especialista I - Desenvolvedor | " },
-    DATE_FEB_26: { en: "Feb 2026 – Present", pt: "Fev 2026 – Presente" },
-    JOB_SENIOR: { en: "Senior Developer | ", pt: "Desenvolvedor Sênior | " },
-    DATE_NOV_23: { en: "Nov 2023 – Jan 2026", pt: "Nov 2023 – Jan 2026" },
-    ACTIVITIES_HEADING: { en: "Activities:", pt: "Atividades:" },
-    ACT_RADIX_1: { en: "Design and implement data modeling in Cognite Fusion Data Model (FDM)", pt: "Projetar e implementar modelagem de dados no Cognite Fusion Data Model (FDM)" },
-    ACT_RADIX_2: { en: "Development of REST API endpoints using Cognite Python SDK.", pt: "Desenvolvimento de endpoints de API REST usando Cognite Python SDK." },
-    ACT_RADIX_3: { en: "Creation of a dynamic and responsive user interface using React.js", pt: "Criação de interface de usuário dinâmica e responsiva usando React.js" },
-    ACT_RADIX_4: { en: "Collaborated with Business Analysts to assess the feasibility of proposed solutions and address project requirements.", pt: "Colaborei com Analistas de Negócios para avaliar a viabilidade das soluções propostas e atender aos requisitos do projeto." },
-    ACT_RADIX_5: { en: "Development of REST API with NestJS", pt: "Desenvolvimento de API REST com NestJS" },
-    ACT_RADIX_6: { en: "Development of mobile screens using React Native", pt: "Desenvolvimento de telas mobile usando React Native" },
-    ACT_RADIX_7: { en: "Accelerated delivery with AI assisted IDE (Cursor)", pt: "Aceleração de entrega com IDE auxiliada por IA (Cursor)" },
-    MAIN_PROJECTS_HEADING: { en: "Main Projects:", pt: "Principais Projetos:" },
-    PROJ_1: { en: "Celanese - Digitization project", pt: "Celanese - Projeto de digitalização" },
-    PROJ_2: { en: "Radix – JO/AI", pt: "Radix – JO/AI" },
-    PROJ_3: { en: "Featbank – web app and mobile app", pt: "Featbank – web app e aplicativo mobile" },
-    COMPANY_ANP: { en: "ANP - National Agency of Petroleum, Natural Gas and Biofuels", pt: "ANP - Agência Nacional do Petróleo, Gás Natural e Biocombustíveis" },
-    JOB_RESEARCHER: { en: "Researcher | ", pt: "Pesquisador | " },
-    DATE_JUN_20: { en: "Jun 2020 – Jul 2022", pt: "Jun 2020 – Jul 2022" },
-    ACT_ANP_1: { en: "Survey of the state of the art on Reinforcement Learning (RL) applied to systems control;", pt: "Pesquisa do estado da arte sobre Aprendizado por Reforço (RL) aplicado ao controle de sistemas;" },
-    ACT_ANP_2: { en: "Proposition of a reward architecture for the agent/controller applicable to the artificial elevation of oil and gas by Electric Submersible Pumps (ESP);", pt: "Proposição de uma arquitetura de recompensa para o agente/controlador aplicável à elevação artificial de óleo e gás por Bombas Submersíveis Elétricas (BCS);" },
-    ACT_ANP_3: { en: "Implementation of the advanced control systems in the ESP oil lifting pilot plant using MATLAB/Simulink.", pt: "Implementação dos sistemas avançados de controle na planta piloto de elevação de petróleo BCS usando MATLAB/Simulink." },
-    COMPANY_KLABIN: { en: "KLABIN – Pulp and Paper", pt: "KLABIN – Celulose e Papel" },
-    JOB_AUTO: { en: "Automation Technical Assistant | ", pt: "Assistente Técnico de Automação | " },
-    DATE_JUL_18: { en: "Jul 2018 - Aug 2022", pt: "Jul 2018 - Ago 2022" },
-    ACT_KLA_1: { en: "Act in the creation of solutions aimed at monitoring the production process, quality maintenance and failure prevention, through the unit's tools (PI System; Excel and Power BI).", pt: "Atuar na criação de soluções voltadas para o monitoramento do processo produtivo, manutenção da qualidade e prevenção de falhas, através das ferramentas da unidade (PI System, Excel e Power BI)." },
-    ACT_KLA_2: { en: "Carry out the monitoring of the main displays of information, support facilitators in the area in resolving difficulties with created systems.", pt: "Realizar o monitoramento dos principais painéis de indicadores, apoiar facilitadores da área na resolução de dificuldades com sistemas criados." },
-    ACT_KLA_3: { en: "Be the facilitator of the unit's OEE system, ensuring good operation.", pt: "Ser o facilitador do sistema OEE da unidade, garantindo sua boa operação." },
-    ACT_KLA_4: { en: "Responsible for the unit's PI System in the implementation of new demands, maintenance of the base conditions of the system (Software and Hardware) and needs for updates and/or upgrades.", pt: "Responsável pelo PI System da unidade na implementação de novas demandas, manutenção das condições base do sistema (Software e Hardware) e necessidades de atualizações e/ou upgrades." },
-    ACT_KLA_5: { en: "Ensure with the automation team the correct application and integration of systems.", pt: "Assegurar junto à equipe de automação a correta aplicação e integração dos sistemas." },
     ACADEMIC_BACKGROUND: { en: "ACADEMIC BACKGROUND", pt: "FORMAÇÃO ACADÊMICA" },
-    EDU_1: { en: "Master's degree in Systems Engineering – University of São Paulo, Brazil – 2025 (in progress)", pt: "Mestrado em Engenharia de Sistemas – Universidade de São Paulo, Brasil – 2025 (em andamento)" },
-    EDU_2: { en: "MBA in Industrial Automation | USP, Brazil – 2020", pt: "MBA em Automação Industrial | USP, Brasil – 2020" },
-    EDU_3: { en: "Post Graduation in Control and Automation Engineering | Mauá Institute of Technology, Brazil – 2016", pt: "Pós-graduação em Engenharia de Controle e Automação | Instituto Mauá de Tecnologia, Brasil – 2016" },
-    EDU_4: { en: "Bachelor of Automation and Control Engineering | Universidade Federal da Bahia (UFBA), Brazil – 2010", pt: "Bacharelado em Engenharia de Controle e Automação | Universidade Federal da Bahia (UFBA), Brasil – 2010" },
-    EDU_5: { en: "Technical course in electromechanics | Instituto Federal da Bahia (IFBA), Brazil - 2004", pt: "Curso técnico em eletromecânica | Instituto Federal da Bahia (IFBA), Brasil - 2004" },
     CERTIFICATIONS: { en: "CERTIFICATIONS", pt: "CERTIFICAÇÕES" },
-    CERT_1: { en: "Process Kaizen Engineering – Maintenance", pt: "Processo de Engenharia Kaizen – Manutenção" },
-    CERT_2: { en: "Process Kaizen Engineering – Quality", pt: "Processo de Engenharia Kaizen – Qualidade" },
-    CERT_3: { en: "PI System Infrastructure Specialist", pt: "Especialista em Infraestrutura PI System" },
-    CERT_4: { en: "PI System Installation Specialist", pt: "Especialista em Instalação PI System" },
-    CERT_5: { en: "AWS Cloud Practitioner", pt: "AWS Cloud Practitioner" },
-    CERT_6: { en: "MiniTab Certificate", pt: "MiniTab Certificate" },
     AWARDS_AND_PUBLICATIONS: { en: "AWARDS AND PUBLICATIONS", pt: "PRÊMIOS E PUBLICAÇÕES" },
-    AWARDS_1: { en: "Technip's \"Jacques Franquelin\" Award at the Innovation Global Contest, in 2013: \"YouTube for Engineering\"", pt: "Prêmio \"Jacques Franquelin\" da Technip no Innovation Global Contest, em 2013: \"YouTube for Engineering\"" },
     LANGUAGES: { en: "LANGUAGES", pt: "IDIOMAS" },
-    LANG_1: { en: "Portuguese – Native", pt: "Português – Nativo" },
-    LANG_2: { en: "English – Fluent", pt: "Inglês – Fluente" },
-    LANG_3: { en: "Spanish – Upper Intermediate", pt: "Espanhol – Intermediário Superior" },
     PRINT_BUTTON: { en: "Download PDF", pt: "Baixar PDF" },
+
+    // About Me Content
+    ABOUT_ME_DESC: {
+        pt: "Sou Desenvolvedor Full-Stack especializado em engenharia de aplicações orientadas a dados. Nos últimos três anos, tenho me dedicado à criação de soluções ponta a ponta, desenvolvendo interfaces dinâmicas com React/TypeScript e serviços escaláveis com Python e NestJS. Possuo sólida experiência em modelagem de dados industriais e integração de APIs utilizando Cognite Data Fusion (FDM), complementada por forte domínio em SQL, Docker e Azure DevOps",
+        en: "I am a Full-Stack Developer specializing in data-driven application engineering. Over the past three years, I have dedicated myself to creating end-to-end solutions, developing dynamic interfaces with React/TypeScript and scalable services with Python and NestJS. I have solid experience in industrial data modeling and API integration using Cognite Data Fusion (FDM), complemented by a strong command of SQL, Docker, and Azure DevOps."
+    },
+
+    // Main Qualifications (Skills)
+    QUAL_REACT: { en: "React", pt: "React" },
+    QUAL_PYTHON: { en: "Python", pt: "Python" },
+    QUAL_NESTJS: { en: "NestJS", pt: "NestJS" },
+    QUAL_GRAPHQL: { en: "Graphql", pt: "Graphql" },
+    QUAL_SQL: { en: "SQL", pt: "SQL" },
+    QUAL_TS: { en: "Typescript", pt: "Typescript" },
+    QUAL_FULLSTACK: { en: "Fullstack", pt: "Fullstack" },
+    QUAL_FRONTEND: { en: "Frontend", pt: "Frontend" },
+    QUAL_BACKEND: { en: "Backend", pt: "Backend" },
+    QUAL_CDF: { en: "Cognite Data Fusion", pt: "Cognite Data Fusion" },
+    QUAL_MOBILE: { en: "Mobile Apps", pt: "Aplicativos móveis" },
+
+    // Experience Items
+    ACTIVITIES_HEADING: { en: "Description:", pt: "Descrição:" },
+
+    COMPANY_RADIX: { en: "Radix", pt: "Radix" },
+    JOB_RADIX_1: { en: "Technical Specialist (Fullstack) | ", pt: "Especialista Técnico (Fullstack) | " },
+    DATE_RADIX_1: { en: "Feb 2026 - Present", pt: "Fevereiro de 2026 - Presente" },
+    ACT_RADIX_1: { 
+        pt: "Fintech: desenvolver múltiplos módulos de uma plataforma de cartões pré-pagos para motoristas, incluindo registro de empresas e notificações. Utilização de TypeScript no frontend (React SPA) e no backend (NestJS).",
+        en: "Fintech: develop multiple modules of a prepaid card platform for drivers, including corporate registration and notifications. Used TypeScript on the frontend (React SPA) and backend (NestJS)."
+    },
+
+    JOB_RADIX_2: { en: "Developer | ", pt: "Desenvolvedor | " },
+    DATE_RADIX_2: { en: "Nov 2023 - Feb 2026", pt: "Novembro de 2023 - Fevereiro de 2026" },
+    ACT_RADIX_2: {
+        pt: "Industria química: Frontend: React SPA usando MaterialUI. Backend: Python (FastAPI), incluindo o design e a implementação de APIs e modelagem de dados para aplicações industriais utilizando Cognite Data Fusion.",
+        en: "Chemical industry: Frontend: React SPA using MaterialUI. Backend: Python (FastAPI), including the design and implementation of APIs and data modeling for industrial applications using Cognite Data Fusion."
+    },
+
+    COMPANY_FRN3: { en: "FRN³", pt: "FRN³" },
+    JOB_FRN3: { en: "Developer | ", pt: "Desenvolvedor | " },
+    DATE_FRN3: { en: "Oct 2022 - Jul 2023", pt: "Outubro de 2022 - Julho de 2023" },
+    ACT_FRN3_1: {
+        pt: "Desenvolvedor frontend, fui responsável pela implementação de melhorias de layout e componentes na plataforma de e-commerce VTEX para diferentes clientes da agência. Estas são as tecnologias que utilizei para programar: Plataforma VTEX.IO, CSS, React JS, Git, VSCode.",
+        en: "Frontend developer, responsible for implementing layout and component improvements on the VTEX e-commerce platform for different agency clients. Technologies used: VTEX.IO Platform, CSS, React JS, Git, VSCode."
+    },
+
+    JOB_SELF: { en: "Owner@selfBusiness | ", pt: "Owner@selfBusiness | " },
+    DATE_SELF: { en: "Nov 2009 - Jul 2021", pt: "Novembro de 2009 - Julho de 2021" },
+    ACT_SELF_1: {
+        pt: "\"Como proprietário, gerenciei os diversos desafios inerentes ao crescimento de uma pequena empresa. Desenvolvi e integrei processos vitais para a operação do negócio sob a ótica de TI, abrangendo áreas como Finanças, Tributário, Vendas e Logística\"",
+        en: "\"As an owner, I managed the various challenges inherent in growing a small business. I developed and integrated vital processes for the business operation from an IT perspective, covering areas such as Finance, Tax, Sales, and Logistics.\""
+    },
+
+    COMPANY_MKT: { en: "Self Employed", pt: "Trabalho Autônomo" },
+    JOB_MKT: { en: "coding@RealEstateCo | ", pt: "coding@RealEstateCo | " },
+    DATE_MKT: { en: "May 2018 - Jul 2018", pt: "Maio de 2018 - Julho de 2018" },
+    ACT_MKT_1: {
+        pt: "Desenvolvimento de soluções de backend em NodeJS (JavaScript/TypeScript) com noSQL (MongoDB). Na arquitetura da solução foram utilizados soluções cloud (IBMCloud) e on premises, além de APIs de terceiros, como Twilio. Era uma solução de facilitação de publicidade e geração de leads para o mercado imobiliário.",
+        en: "Development of backend solutions in NodeJS (JavaScript/TypeScript) with noSQL (MongoDB). The solution architecture used cloud solutions (IBMCloud) and on premises, in addition to third-party APIs, such as Twilio. It was an advertising facilitation and lead generation solution for the real estate market."
+    },
+
+    COMPANY_ACCENTURE: { en: "Accenture", pt: "Accenture" },
+    JOB_ACCENTURE_1: { en: "Consultant | ", pt: "Consultant | " },
+    DATE_ACCENTURE_1: { en: "Oct 2006 - Sep 2009", pt: "Outubro de 2006 - Setembro de 2009" },
+    ACT_ACCENTURE_1: {
+        pt: "Consultor de TI – Projeto Painel Digital (Petrobras): Modelagem e Estratégia: Projetei e validei a modelagem de dados para 20+ soluções de negócio. Liderança Técnica: Orientei a equipe do cliente na implementação da arquitetura de dados.",
+        en: "IT Consultant – Digital Panel Project (Petrobras): Modeling and Strategy: Designed and validated data modeling for 20+ business solutions. Technical Leadership: Guided the client team in implementing the data architecture."
+    },
+    ACT_ACCENTURE_1_2: {
+        pt: "Desenvolvimento e Integração: Responsável pelo backend e depuração de componentes em C# e serviços Java (BEA Weblogic) integrados a bancos Oracle.",
+        en: "Development and Integration: Responsible for backend and component debugging in C# and Java services (BEA Weblogic) integrated with Oracle databases."
+    },
+
+    JOB_ACCENTURE_2: { en: "Consultant | ", pt: "Consultant | " },
+    DATE_ACCENTURE_2: { en: "Sep 2004 - Sep 2006", pt: "Setembro de 2004 - Setembro de 2006" },
+    ACT_ACCENTURE_2: {
+        pt: "Unilever | Analista de Infraestrutura (América Latina): Atuei na migração em larga escala de 15.000 estações de trabalho Windows na região LATAM. Fui responsável pelo suporte crítico pós-migração, atendendo uma média semanal de 300 usuários por localidade. Garanti a estabilidade do projeto através da resolução de incidentes em servidores e estações, além de desenvolver scripts de automação (PowerShell, VBScript e AutoIt) para otimizar processos de rede e conectividade TCP/IP.",
+        en: "Unilever | Infrastructure Analyst (Latin America): Acted in the large-scale migration of 15,000 Windows workstations in the LATAM region. Responsible for critical post-migration support, assisting a weekly average of 300 users per location. Ensured project stability by resolving incidents on servers and workstations, in addition to developing automation scripts (PowerShell, VBScript, and AutoIt) to optimize network processes and TCP/IP connectivity."
+    },
+
+    JOB_ACCENTURE_3: { en: "Software Analyst | ", pt: "Software Analyst | " },
+    DATE_ACCENTURE_3: { en: "Sep 2001 - Sep 2004", pt: "Setembro de 2001 - Setembro de 2004" },
+    ACT_ACCENTURE_3: {
+        pt: "Cargill | Analista de Suporte de 2º Nível (ERP JDE OneWorld): Atuei no suporte especializado ao módulo de Originação, focado na aquisição de soja. Minhas responsabilidades incluíam a análise técnica de bancos de dados para identificar e corrigir inconsistências contábeis. Realizei a depuração de processos do ERP utilizando C++ e SQL/PL-SQL, garantindo a integridade das informações ou o direcionamento estratégico de falhas para equipes globais de desenvolvimento",
+        en: "Cargill | 2nd Level Support Analyst (JDE OneWorld ERP): Acted in specialized support to the Origination module, focused on soybean acquisition. Responsibilities included technical analysis of databases to identify and correct accounting inconsistencies. Debugged ERP processes using C++ and SQL/PL-SQL, ensuring data integrity or strategic routing of failures to global development teams."
+    },
+
+    // Education
+    EDU_1: { 
+        pt: "Gama Academy: Skilled, Full Stack and VTEX.IO · (abril de 2022 - julho de 2022)", 
+        en: "Gama Academy: Skilled, Full Stack and VTEX.IO · (April 2022 - July 2022)" 
+    },
+    EDU_2: { 
+        pt: "Veris - IBTA: Bachelor's Degree, Software Engineering with SOA · (2009 - 2010)", 
+        en: "Veris - IBTA: Bachelor's Degree, Software Engineering with SOA · (2009 - 2010)" 
+    },
+    EDU_3: { 
+        pt: "CAMP E-ATT: Bachelor's degree, Information Systems · (2000 - 2003)", 
+        en: "CAMP E-ATT: Bachelor's degree, Information Systems · (2000 - 2003)" 
+    },
+
+    // Certifications
+    CERT_1: { 
+        pt: "Trilha de Formação em VTEX.IO", 
+        en: "VTEX.IO Training Track" 
+    },
+    CERT_2: { 
+        pt: "AWS, DEVOPS e Digital Ecommerce", 
+        en: "AWS, DEVOPS and Digital Ecommerce" 
+    },
+    CERT_3: { 
+        pt: "Deep Dive: Building Your First Application", 
+        en: "Deep Dive: Building Your First Application" 
+    },
+    CERT_4: { 
+        pt: "Speedrun: Your First AIP Workflow", 
+        en: "Speedrun: Your First AIP Workflow" 
+    },
+
+    // Awards and Publications
+    AWARDS_1: { 
+        pt: "1º Lugar no Hiring Coders#3 2022", 
+        en: "1st Place at Hiring Coders#3 2022" 
+    },
+
+    // Languages
+    LANG_1: { pt: "Portuguese (Native or Bilingual)", en: "Portuguese (Native or Bilingual)" },
+    LANG_2: { pt: "English (Professional Working)", en: "English (Professional Working)" },
+    LANG_3: { pt: "Spanish (Limited Working)", en: "Spanish (Limited Working)" }
 };

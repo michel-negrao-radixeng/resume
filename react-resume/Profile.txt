@@ -1,0 +1,159 @@
+Contato
+michelnegrao@gmail.com
+
+Michel Negrao
+
+www.linkedin.com/in/michelnegrao
+(LinkedIn)
+
+React | Python | NestJS | Graphql | SQL | Typescript | Fullstack |
+Frontend | Backend | Cognite Data Fusion
+Brasil
+
+Principais competências
+
+Resumo
+
+NestJS
+Aplicativos móveis
+TypeScript
+
+Languages
+English (Professional Working)
+Spanish (Limited Working)
+Portuguese (Native or Bilingual)
+
+Certifications
+Trilha de Formação em VTEX.IO,
+AWS, DEVOPS e Digital Ecommerce
+Deep Dive: Building Your First
+Application
+
+Desenvolvedor. Skills: React | Python | NestJS | Graphql | SQL |
+Typescript | Fullstack | Frontend | Backend | Cognite Data Fusion
+Sou Desenvolvedor Full-Stack especializado em engenharia de
+aplicações orientadas a dados. Nos últimos três anos, tenho me
+dedicado à criação de soluções ponta a ponta, desenvolvendo
+interfaces dinâmicas com React/TypeScript e serviços escaláveis
+com Python e NestJS. Possuo sólida experiência em modelagem
+de dados industriais e integração de APIs utilizando Cognite Data
+Fusion (FDM), complementada por forte domínio em SQL, Docker e
+Azure DevOps
+
+Speedrun: Your First AIP Workflow
+
+Experiência
+
+Verified International Academic
+Qualifications
+
+Radix
+
+1º Lugar no Hiring Coders#3 2022
+
+2 anos 5 meses
+
+Especialista Técnico (Fullstack)
+
+fevereiro de 2026 - Present (2 meses)
+Rio de Janeiro, Brazil
+Fintech: desenvolver múltiplos módulos de uma plataforma de cartões
+pré-pagos para motoristas, incluindo registro de empresas e notificações.
+Utilização de TypeScript no frontend (React SPA) e no backend (NestJS).
+
+Desenvolvedor
+
+novembro de 2023 - fevereiro de 2026 (2 anos 4 meses)
+Remoto
+Industria química:
+Frontend: React SPA usando MaterialUI.
+Backend: Python (FastAPI), incluindo o design e a implementação de APIs
+e modelagem de dados para aplicações industriais utilizando Cognite Data
+Fusion.
+Page 1 of 3
+
+FRN³
+Desenvolvedor
+
+outubro de 2022 - julho de 2023 (10 meses)
+Remoto
+Desenvolvedor frontend, fui responsável pela implementação de melhorias de
+layout e componentes na plataforma de e-commerce VTEX para diferentes
+clientes da agência. Estas são as tecnologias que utilizei para programar:
+Plataforma VTEX.IO
+CSS
+React JS
+Git
+VSCode
+
+Self Owned Business
+Owner@selfBusiness
+
+novembro de 2009 - julho de 2021 (11 anos 9 meses)
+"Como proprietário, gerenciei os diversos desafios inerentes ao crescimento
+de uma pequena empresa. Desenvolvi e integrei processos vitais para a
+operação do negócio sob a ótica de TI, abrangendo áreas como Finanças,
+Tributário, Vendas e Logística
+
+Self Employed
+coding@RealEstateCo
+
+maio de 2018 - julho de 2018 (3 meses)
+Desenvolvimento de soluções de backend em NodeJS (JavaScript/TypeScript)
+com noSQL (MongoDB). Na arquitetura da solução foram utilizados soluções
+cloud (IBMCloud) e on premises, além de APIs de terceiros, como Twilio. Era
+uma solução de facilitação de publicidade e geração de leads para o mercado
+imobiliário.
+
+Accenture
+8 anos 1 mês
+
+Consultant
+
+outubro de 2006 - setembro de 2009 (3 anos)
+Consultor de TI – Projeto Painel Digital (Petrobras)
+Modelagem e Estratégia: Projetei e validei a modelagem de dados para 20+
+soluções de negócio.
+Liderança Técnica: Orientei a equipe do cliente na implementação da
+arquitetura de dados.
+Page 2 of 3
+
+Desenvolvimento e Integração: Responsável pelo backend e depuração de
+componentes em C# e serviços Java (BEA Weblogic) integrados a bancos
+Oracle.
+
+Consultant
+
+setembro de 2004 - setembro de 2006 (2 anos 1 mês)
+Unilever | Analista de Infraestrutura (América Latina)
+Atuei na migração em larga escala de 15.000 estações de trabalho Windows
+na região LATAM. Fui responsável pelo suporte crítico pós-migração,
+atendendo uma média semanal de 300 usuários por localidade. Garanti a
+estabilidade do projeto através da resolução de incidentes em servidores e
+estações, além de desenvolver scripts de automação (PowerShell, VBScript e
+AutoIt) para otimizar processos de rede e conectividade TCP/IP.
+
+Software Analyst
+
+setembro de 2001 - setembro de 2004 (3 anos 1 mês)
+Cargill | Analista de Suporte de 2º Nível (ERP JDE OneWorld)
+Atuei no suporte especializado ao módulo de Originação, focado na aquisição
+de soja. Minhas responsabilidades incluíam a análise técnica de bancos
+de dados para identificar e corrigir inconsistências contábeis. Realizei a
+depuração de processos do ERP utilizando C++ e SQL/PL-SQL, garantindo a
+integridade das informações ou o direcionamento estratégico de falhas para
+equipes globais de desenvolvimento
+
+Formação acadêmica
+Gama Academy
+Skilled, Full Stack and VTEX.IO · (abril de 2022 - julho de 2022)
+
+Veris - IBTA
+Bachelor's Degree, Software Engineering with SOA · (2009 - 2010)
+
+CAMP E-ATT
+Bachelor's degree, Information Systems · (2000 - 2003)
+
+Page 3 of 3
+
+

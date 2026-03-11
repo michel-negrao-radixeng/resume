@@ -60,7 +60,7 @@ export interface ParagraphSection {
 export type AnySection = BulletSection | ExperienceSection | ParagraphSection;
 
 // ---------------------------------------------------------------------------
-// Resume content declaration
+// Resume content declaration (LinkedIn Export driven)
 // ---------------------------------------------------------------------------
 
 export const resumeSections: AnySection[] = [
@@ -73,13 +73,17 @@ export const resumeSections: AnySection[] = [
         type: 'bullets',
         titleKey: 'MAIN_QUALIFICATIONS',
         items: [
-            'QUAL_CDF',
-            'QUAL_JS',
+            'QUAL_REACT',
             'QUAL_PYTHON',
+            'QUAL_NESTJS',
+            'QUAL_GRAPHQL',
             'QUAL_SQL',
-            'QUAL_AZURE',
-            'QUAL_DOCKER',
-            'QUAL_LINUX',
+            'QUAL_TS',
+            'QUAL_FULLSTACK',
+            'QUAL_FRONTEND',
+            'QUAL_BACKEND',
+            'QUAL_CDF',
+            'QUAL_MOBILE',
         ],
     },
     {
@@ -89,51 +93,69 @@ export const resumeSections: AnySection[] = [
             {
                 companyKey: 'COMPANY_RADIX',
                 roles: [
-                    { titleKey: 'JOB_SPEC_1', dateKey: 'DATE_FEB_26' },
-                    { titleKey: 'JOB_SENIOR', dateKey: 'DATE_NOV_23' },
+                    { titleKey: 'JOB_RADIX_1', dateKey: 'DATE_RADIX_1' },
+                    { titleKey: 'JOB_RADIX_2', dateKey: 'DATE_RADIX_2' }
                 ],
                 activitiesHeadingKey: 'ACTIVITIES_HEADING',
-                activities: [
-                    'ACT_RADIX_1',
-                    'ACT_RADIX_2',
-                    'ACT_RADIX_3',
-                    'ACT_RADIX_4',
-                    'ACT_RADIX_5',
-                    'ACT_RADIX_6',
-                    'ACT_RADIX_7',
-                ],
-                projectsHeadingKey: 'MAIN_PROJECTS_HEADING',
-                projects: ['PROJ_1', 'PROJ_2', 'PROJ_3'],
+                activities: ['ACT_RADIX_1', 'ACT_RADIX_2'],
             },
             {
-                companyKey: 'COMPANY_ANP',
-                roles: [{ titleKey: 'JOB_RESEARCHER', dateKey: 'DATE_JUN_20' }],
+                companyKey: 'COMPANY_FRN3',
+                roles: [{ titleKey: 'JOB_FRN3', dateKey: 'DATE_FRN3' }],
                 activitiesHeadingKey: 'ACTIVITIES_HEADING',
-                activities: ['ACT_ANP_1', 'ACT_ANP_2', 'ACT_ANP_3'],
+                activities: ['ACT_FRN3_1'],
             },
             {
-                companyKey: 'COMPANY_KLABIN',
-                roles: [{ titleKey: 'JOB_AUTO', dateKey: 'DATE_JUL_18' }],
+                companyKey: 'COMPANY_MKT',
+                roles: [{ titleKey: 'JOB_SELF', dateKey: 'DATE_SELF' }],
                 activitiesHeadingKey: 'ACTIVITIES_HEADING',
-                activities: [
-                    'ACT_KLA_1',
-                    'ACT_KLA_2',
-                    'ACT_KLA_3',
-                    'ACT_KLA_4',
-                    'ACT_KLA_5',
-                ],
+                activities: ['ACT_SELF_1'],
             },
+            {
+                companyKey: 'COMPANY_MKT',
+                roles: [{ titleKey: 'JOB_MKT', dateKey: 'DATE_MKT' }],
+                activitiesHeadingKey: 'ACTIVITIES_HEADING',
+                activities: ['ACT_MKT_1'],
+            },
+            {
+                companyKey: 'COMPANY_ACCENTURE',
+                roles: [
+                    { titleKey: 'JOB_ACCENTURE_1', dateKey: 'DATE_ACCENTURE_1' },
+                ],
+                activitiesHeadingKey: 'ACTIVITIES_HEADING',
+                activities: ['ACT_ACCENTURE_1', 'ACT_ACCENTURE_1_2'],
+            },
+            {
+                // This is grouped under Accenture logically in the LinkedIn PDF but 
+                // formatted uniquely in the export. I will attach it as a continuation 
+                // of Accenture roles.
+                companyKey: 'COMPANY_ACCENTURE',
+                roles: [
+                    { titleKey: 'JOB_ACCENTURE_2', dateKey: 'DATE_ACCENTURE_2' }
+                ],
+                activitiesHeadingKey: 'ACTIVITIES_HEADING',
+                activities: ['ACT_ACCENTURE_2'],
+            },
+            {
+                // Another nested Accenture role for Cargill
+                companyKey: 'COMPANY_ACCENTURE',
+                roles: [
+                    { titleKey: 'JOB_ACCENTURE_3', dateKey: 'DATE_ACCENTURE_3' }
+                ],
+                activitiesHeadingKey: 'ACTIVITIES_HEADING',
+                activities: ['ACT_ACCENTURE_3'],
+            }
         ],
     },
     {
         type: 'bullets',
         titleKey: 'ACADEMIC_BACKGROUND',
-        items: ['EDU_1', 'EDU_2', 'EDU_3', 'EDU_4', 'EDU_5'],
+        items: ['EDU_1', 'EDU_2', 'EDU_3'],
     },
     {
         type: 'bullets',
         titleKey: 'CERTIFICATIONS',
-        items: ['CERT_1', 'CERT_2', 'CERT_3', 'CERT_4', 'CERT_5', 'CERT_6'],
+        items: ['CERT_1', 'CERT_2', 'CERT_3', 'CERT_4'],
     },
     {
         type: 'bullets',
