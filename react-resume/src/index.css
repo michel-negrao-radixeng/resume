@@ -265,6 +265,7 @@ ul.activities-list li::before {
     text-align: center;
     padding-bottom: 0;
     padding-top: 5px;
+    z-index: 10;
 }
 
 .footer-container img {
@@ -273,6 +274,7 @@ ul.activities-list li::before {
     object-fit: contain;
     display: block;
     margin: 0 auto;
+    filter: none; /* Make sure theme doesn't accidentally hide it */
 }
 
 /* ─── Dark Mode ─────────────────────────────────────────────────────────── */
@@ -365,6 +367,12 @@ ul.activities-list li::before {
         text-align: center;
         z-index: 100;
         padding: 0;
+        display: block !important;
+    }
+
+    .footer-container img {
+        display: block !important;
+        visibility: visible !important;
     }
 
     .lang-toggle,

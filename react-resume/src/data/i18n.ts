@@ -44,14 +44,14 @@ export const i18nData: I18nDictionary = {
     JOB_RADIX_1: { en: "Technical Specialist (Fullstack) | ", pt: "Especialista Técnico (Fullstack) | " },
     DATE_RADIX_1: { en: "Feb 2026 - Present", pt: "Fevereiro de 2026 - Presente" },
     ACT_RADIX_1: { 
-        pt: "Fintech: desenvolver múltiplos módulos de uma plataforma de cartões pré-pagos para motoristas, incluindo registro de empresas e notificações. Utilização de TypeScript no frontend (React SPA) e no backend (NestJS).",
-        en: "Fintech: develop multiple modules of a prepaid card platform for drivers, including corporate registration and notifications. Used TypeScript on the frontend (React SPA) and backend (NestJS)."
+        pt: "Fintech: desenvolvimento de múltiplos módulos de uma plataforma de cartões pré-pagos para motoristas, incluindo registro de empresas e notificações. Utilização de TypeScript no frontend (React SPA) e no backend (NestJS).",
+        en: "Fintech: developed multiple modules of a prepaid card platform for drivers, including corporate registration and notifications. Used TypeScript on the frontend (React SPA) and backend (NestJS)."
     },
 
     JOB_RADIX_2: { en: "Developer | ", pt: "Desenvolvedor | " },
     DATE_RADIX_2: { en: "Nov 2023 - Feb 2026", pt: "Novembro de 2023 - Fevereiro de 2026" },
     ACT_RADIX_2: {
-        pt: "Industria química: Frontend: React SPA usando MaterialUI. Backend: Python (FastAPI), incluindo o design e a implementação de APIs e modelagem de dados para aplicações industriais utilizando Cognite Data Fusion.",
+        pt: "Indústria química: Frontend: React SPA usando MaterialUI. Backend: Python (FastAPI), incluindo o design e a implementação de APIs e modelagem de dados para aplicações industriais utilizando Cognite Data Fusion.",
         en: "Chemical industry: Frontend: React SPA using MaterialUI. Backend: Python (FastAPI), including the design and implementation of APIs and data modeling for industrial applications using Cognite Data Fusion."
     },
 
@@ -59,8 +59,8 @@ export const i18nData: I18nDictionary = {
     JOB_FRN3: { en: "Developer | ", pt: "Desenvolvedor | " },
     DATE_FRN3: { en: "Oct 2022 - Jul 2023", pt: "Outubro de 2022 - Julho de 2023" },
     ACT_FRN3_1: {
-        pt: "Desenvolvedor frontend, fui responsável pela implementação de melhorias de layout e componentes na plataforma de e-commerce VTEX para diferentes clientes da agência. Estas são as tecnologias que utilizei para programar: Plataforma VTEX.IO, CSS, React JS, Git, VSCode.",
-        en: "Frontend developer, responsible for implementing layout and component improvements on the VTEX e-commerce platform for different agency clients. Technologies used: VTEX.IO Platform, CSS, React JS, Git, VSCode."
+        pt: "Atuando como desenvolvedor frontend, fui responsável pela implementação de melhorias de layout e componentes na plataforma de e-commerce VTEX para diferentes clientes da agência. Tecnologias utilizadas: Plataforma VTEX.IO, CSS, React JS, Git, VSCode.",
+        en: "Acting as a frontend developer, I was responsible for implementing layout and component improvements on the VTEX e-commerce platform for different agency clients. Technologies used: VTEX.IO Platform, CSS, React JS, Git, VSCode."
     },
 
     JOB_SELF: { en: "Owner@selfBusiness | ", pt: "Owner@selfBusiness | " },
@@ -74,12 +74,12 @@ export const i18nData: I18nDictionary = {
     JOB_MKT: { en: "coding@RealEstateCo | ", pt: "coding@RealEstateCo | " },
     DATE_MKT: { en: "May 2018 - Jul 2018", pt: "Maio de 2018 - Julho de 2018" },
     ACT_MKT_1: {
-        pt: "Desenvolvimento de soluções de backend em NodeJS (JavaScript/TypeScript) com noSQL (MongoDB). Na arquitetura da solução foram utilizados soluções cloud (IBMCloud) e on premises, além de APIs de terceiros, como Twilio. Era uma solução de facilitação de publicidade e geração de leads para o mercado imobiliário.",
-        en: "Development of backend solutions in NodeJS (JavaScript/TypeScript) with noSQL (MongoDB). The solution architecture used cloud solutions (IBMCloud) and on premises, in addition to third-party APIs, such as Twilio. It was an advertising facilitation and lead generation solution for the real estate market."
+        pt: "Desenvolvimento de soluções de backend em NodeJS (JavaScript/TypeScript) com noSQL (MongoDB). Na arquitetura da solução foram utilizadas soluções cloud (IBMCloud) e on premises, além de APIs de terceiros, como Twilio. A plataforma consistia em uma solução de facilitação de publicidade e geração de leads para o mercado imobiliário.",
+        en: "Development of backend solutions in NodeJS (JavaScript/TypeScript) with noSQL (MongoDB). The solution architecture used cloud solutions (IBMCloud) and on premises, in addition to third-party APIs, such as Twilio. The platform consisted of an advertising facilitation and lead generation solution for the real estate market."
     },
 
     COMPANY_ACCENTURE: { en: "Accenture", pt: "Accenture" },
-    JOB_ACCENTURE_1: { en: "Consultant | ", pt: "Consultant | " },
+    JOB_ACCENTURE_1: { en: "Consultant | ", pt: "Consultor | " },
     DATE_ACCENTURE_1: { en: "Oct 2006 - Sep 2009", pt: "Outubro de 2006 - Setembro de 2009" },
     ACT_ACCENTURE_1: {
         pt: "Consultor de TI – Projeto Painel Digital (Petrobras): Modelagem e Estratégia: Projetei e validei a modelagem de dados para 20+ soluções de negócio. Liderança Técnica: Orientei a equipe do cliente na implementação da arquitetura de dados.",
@@ -90,18 +90,18 @@ export const i18nData: I18nDictionary = {
         en: "Development and Integration: Responsible for backend and component debugging in C# and Java services (BEA Weblogic) integrated with Oracle databases."
     },
 
-    JOB_ACCENTURE_2: { en: "Consultant | ", pt: "Consultant | " },
+    JOB_ACCENTURE_2: { en: "Consultant | ", pt: "Consultor | " },
     DATE_ACCENTURE_2: { en: "Sep 2004 - Sep 2006", pt: "Setembro de 2004 - Setembro de 2006" },
     ACT_ACCENTURE_2: {
         pt: "Unilever | Analista de Infraestrutura (América Latina): Atuei na migração em larga escala de 15.000 estações de trabalho Windows na região LATAM. Fui responsável pelo suporte crítico pós-migração, atendendo uma média semanal de 300 usuários por localidade. Garanti a estabilidade do projeto através da resolução de incidentes em servidores e estações, além de desenvolver scripts de automação (PowerShell, VBScript e AutoIt) para otimizar processos de rede e conectividade TCP/IP.",
         en: "Unilever | Infrastructure Analyst (Latin America): Acted in the large-scale migration of 15,000 Windows workstations in the LATAM region. Responsible for critical post-migration support, assisting a weekly average of 300 users per location. Ensured project stability by resolving incidents on servers and workstations, in addition to developing automation scripts (PowerShell, VBScript, and AutoIt) to optimize network processes and TCP/IP connectivity."
     },
 
-    JOB_ACCENTURE_3: { en: "Software Analyst | ", pt: "Software Analyst | " },
+    JOB_ACCENTURE_3: { en: "Software Analyst | ", pt: "Analista de Software | " },
     DATE_ACCENTURE_3: { en: "Sep 2001 - Sep 2004", pt: "Setembro de 2001 - Setembro de 2004" },
     ACT_ACCENTURE_3: {
-        pt: "Cargill | Analista de Suporte de 2º Nível (ERP JDE OneWorld): Atuei no suporte especializado ao módulo de Originação, focado na aquisição de soja. Minhas responsabilidades incluíam a análise técnica de bancos de dados para identificar e corrigir inconsistências contábeis. Realizei a depuração de processos do ERP utilizando C++ e SQL/PL-SQL, garantindo a integridade das informações ou o direcionamento estratégico de falhas para equipes globais de desenvolvimento",
-        en: "Cargill | 2nd Level Support Analyst (JDE OneWorld ERP): Acted in specialized support to the Origination module, focused on soybean acquisition. Responsibilities included technical analysis of databases to identify and correct accounting inconsistencies. Debugged ERP processes using C++ and SQL/PL-SQL, ensuring data integrity or strategic routing of failures to global development teams."
+        pt: "Cargill | Analista de Suporte de 2º Nível (ERP JDE OneWorld): Atuei no suporte especializado ao módulo de Originação, focado na aquisição de soja. Minhas responsabilidades incluíam a análise técnica de bancos de dados para identificar e corrigir inconsistências contábeis. Realizei a depuração de processos do ERP utilizando C++ e SQL/PL-SQL, garantindo a integridade das informações e o direcionamento estratégico de falhas para equipes globais de desenvolvimento",
+        en: "Cargill | 2nd Level Support Analyst (JDE OneWorld ERP): Acted in specialized support to the Origination module, focused on soybean acquisition. Responsibilities included technical analysis of databases to identify and correct accounting inconsistencies. Debugged ERP processes using C++ and SQL/PL-SQL, ensuring data integrity and strategic routing of failures to global development teams."
     },
 
     // Education
@@ -110,12 +110,12 @@ export const i18nData: I18nDictionary = {
         en: "Gama Academy: Skilled, Full Stack and VTEX.IO · (April 2022 - July 2022)" 
     },
     EDU_2: { 
-        pt: "Veris - IBTA: Bachelor's Degree, Software Engineering with SOA · (2009 - 2010)", 
+        pt: "Veris - IBTA: Bacharelado em Engenharia de Software com ênfase em SOA · (2009 - 2010)", 
         en: "Veris - IBTA: Bachelor's Degree, Software Engineering with SOA · (2009 - 2010)" 
     },
     EDU_3: { 
-        pt: "CAMP E-ATT: Bachelor's degree, Information Systems · (2000 - 2003)", 
-        en: "CAMP E-ATT: Bachelor's degree, Information Systems · (2000 - 2003)" 
+        pt: "Uniban: Bacharelado em Sistemas de Informação · (2000 - 2003)", 
+        en: "Uniban: Bachelor's degree, Information Systems · (2000 - 2003)" 
     },
 
     // Certifications
@@ -128,22 +128,22 @@ export const i18nData: I18nDictionary = {
         en: "AWS, DEVOPS and Digital Ecommerce" 
     },
     CERT_3: { 
-        pt: "Deep Dive: Building Your First Application", 
-        en: "Deep Dive: Building Your First Application" 
+        pt: "Palantir - AIP Logic: Building Your First Application", 
+        en: "Palantir - AIP Logic: Building Your First Application" 
     },
     CERT_4: { 
-        pt: "Speedrun: Your First AIP Workflow", 
-        en: "Speedrun: Your First AIP Workflow" 
+        pt: "Palantir - Foundry Ontology: Your First AIP Workflow", 
+        en: "Palantir - Foundry Ontology: Your First AIP Workflow" 
     },
 
     // Awards and Publications
     AWARDS_1: { 
-        pt: "1º Lugar no Hiring Coders#3 2022", 
-        en: "1st Place at Hiring Coders#3 2022" 
+        pt: "VTEX - 1º Lugar no Hiring Coders#3 2022", 
+        en: "VTEX - 1st Place at Hiring Coders#3 2022" 
     },
 
     // Languages
-    LANG_1: { pt: "Portuguese (Native or Bilingual)", en: "Portuguese (Native or Bilingual)" },
-    LANG_2: { pt: "English (Professional Working)", en: "English (Professional Working)" },
-    LANG_3: { pt: "Spanish (Limited Working)", en: "Spanish (Limited Working)" }
+    LANG_1: { pt: "Português (Nativo)", en: "Portuguese (Native or Bilingual)" },
+    LANG_2: { pt: "Inglês (Profissional/Fluente)", en: "English (Professional Working)" },
+    LANG_3: { pt: "Espanhol (Básico)", en: "Spanish (Limited Working)" }
 };
