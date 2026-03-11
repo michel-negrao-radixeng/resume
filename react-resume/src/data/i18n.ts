@@ -70,5 +70,6 @@ export const i18nData: I18nDictionary = {
     LANGUAGES: { en: "LANGUAGES", pt: "IDIOMAS" },
     LANG_1: { en: "Portuguese – Native", pt: "Português – Nativo" },
     LANG_2: { en: "English – Fluent", pt: "Inglês – Fluente" },
-    LANG_3: { en: "Spanish – Upper Intermediate", pt: "Espanhol – Intermediário Superior" }
+    LANG_3: { en: "Spanish – Upper Intermediate", pt: "Espanhol – Intermediário Superior" },
+    PRINT_BUTTON: { en: "Download PDF", pt: "Baixar PDF" },
 };

@@ -52,6 +52,50 @@ body {
     color: white;
 }
 
+.print-btn {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background: white;
+    border: 1px solid var(--purple-theme);
+    color: var(--purple-theme);
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: "Lato", sans-serif;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.print-btn:hover {
+    background: #f0ebf2;
+}
+
+.theme-btn {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: white;
+    border: 1px solid var(--purple-theme);
+    color: var(--purple-theme);
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14pt;
+    font-family: "Lato", sans-serif;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+    line-height: 1;
+}
+
+.theme-btn:hover {
+    background: #f0ebf2;
+}
+
 .page {
     width: 210mm;
     min-height: 297mm;
@@ -231,6 +275,62 @@ ul.activities-list li::before {
     margin: 0 auto;
 }
 
+/* ─── Dark Mode ─────────────────────────────────────────────────────────── */
+
+[data-theme="dark"] body {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .page {
+    background-color: #16213e;
+    color: #e0e0e0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] .horizontal-line {
+    border-color: #4a4a6a;
+}
+
+[data-theme="dark"] .section-box {
+    color: #c084d8;
+    border-color: #c084d8;
+}
+
+[data-theme="dark"] .name-title {
+    color: #c084d8;
+}
+
+[data-theme="dark"] .company-header {
+    color: #c084d8;
+}
+
+[data-theme="dark"] .skills-list li::before,
+[data-theme="dark"] ul.activities-list li::before {
+    color: #c084d8;
+}
+
+[data-theme="dark"] .lang-btn,
+[data-theme="dark"] .print-btn,
+[data-theme="dark"] .theme-btn {
+    background: #1e1e3a;
+    color: #c084d8;
+    border-color: #c084d8;
+}
+
+[data-theme="dark"] .lang-btn:hover,
+[data-theme="dark"] .print-btn:hover,
+[data-theme="dark"] .theme-btn:hover {
+    background: #2a2a4a;
+}
+
+[data-theme="dark"] .lang-btn.active {
+    background: #541e62;
+    color: white;
+}
+
+/* ─── Print ──────────────────────────────────────────────────────────────── */
+
 @media print {
     @page {
         margin: 0;
@@ -267,7 +367,18 @@ ul.activities-list li::before {
         padding: 0;
     }
 
-    .lang-toggle {
+    .lang-toggle,
+    .print-btn,
+    .theme-btn {
         display: none !important;
     }
+
+    /* Always render light theme on print regardless of selected theme */
+    [data-theme="dark"] body { background: white !important; }
+    [data-theme="dark"] .page { background: white !important; color: #595959 !important; }
+    [data-theme="dark"] .name-title { color: #541e62 !important; }
+    [data-theme="dark"] .section-box { color: #541e62 !important; border-color: #541e62 !important; }
+    [data-theme="dark"] .company-header { color: #541e62 !important; }
+    [data-theme="dark"] .skills-list li::before,
+    [data-theme="dark"] ul.activities-list li::before { color: #541e62 !important; }
 }

@@ -66,7 +66,7 @@ export default function ResumePage() {
                     <tr>
                         <td>
                             <div className="header-stripe">
-                                <img src="/header_logo.png" alt="logo" />
+                                <img src={`${import.meta.env.BASE_URL}header_logo.png`} alt="logo" />
                             </div>
                         </td>
                     </tr>
@@ -92,7 +92,7 @@ export default function ResumePage() {
                 </tfoot>
             </table>
             <div className="footer-container">
-                <img src="/footer_illustration.png" alt="footer" />
+                <img src={`${import.meta.env.BASE_URL}footer_illustration.png`} alt="footer" />
             </div>
         </div>
     );

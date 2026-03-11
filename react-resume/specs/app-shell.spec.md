@@ -1,6 +1,6 @@
 ---
 name: App Shell
-description: Root application entry point that wires together the LanguageProvider context and the top-level rendered components.
+description: Root application entry point that wires together the ThemeProvider, LanguageProvider context and the top-level rendered components.
 targets:
   - ../src/App.tsx
   - ../src/main.tsx
@@ -14,10 +14,14 @@ Bootstraps the React application and enforces the correct component hierarchy.
 ## Component tree
 
 ```
-<LanguageProvider>       ← provides language state globally
-  <LanguageToggle />     ← floating locale switcher (screen only)
-  <ResumePage />         ← main document
-</LanguageProvider>
+<ThemeProvider>           ← provides theme state globally (light / dark)
+  <LanguageProvider>      ← provides language state globally
+    <LanguageToggle />    ← floating locale switcher (screen only)
+    <PrintButton />       ← floating print / download PDF button (screen only)
+    <ThemeToggle />       ← floating ☀️ / 🌙 theme switcher (screen only)
+    <ResumePage />        ← main document
+  </LanguageProvider>
+</ThemeProvider>
 ```
 
 ## Entrypoint (`main.tsx`)
