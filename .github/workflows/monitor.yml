@@ -1,0 +1,28 @@
+name: Radix Job Monitor
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Every 6 hours
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Job Monitor
+        run: node scripts/monitor_jobs.cjs
+
+      - name: Commit and push cache update
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add scripts/jobs_cache.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update Radix job cache [skip ci]" && git push)
