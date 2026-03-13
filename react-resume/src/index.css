@@ -96,6 +96,42 @@ body {
     background: #f0ebf2;
 }
 
+/* ─── Template Toggle ─────────────────────────────────────────────────── */
+
+.template-toggle {
+    position: fixed;
+    top: 140px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1000;
+}
+
+.template-btn {
+    background: white;
+    border: 1px solid var(--purple-theme);
+    color: var(--purple-theme);
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: "Lato", sans-serif;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.template-btn:hover {
+    background: #f0ebf2;
+}
+
+.template-btn.active {
+    background: var(--purple-theme);
+    color: white;
+}
+
+/* ─── Page Layout ──────────────────────────────────────────────────────── */
 .page {
     width: 210mm;
     min-height: 297mm;
@@ -115,12 +151,14 @@ thead {
     display: table-header-group;
 }
 
-thead td {
-    padding-top: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-bottom: 15mm;
-    border: none;
+thead th, thead td {
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* Base printable spacers (hidden on screen, visible/heighted in print) */
+.print-spacer, .print-footer-spacer {
+    display: none;
 }
 
 tfoot {
@@ -161,7 +199,7 @@ tfoot td {
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 25px;
-    margin-top: 5px;
+    margin-top: 25px;
 }
 
 .horizontal-line {
@@ -277,7 +315,158 @@ ul.activities-list li::before {
     filter: none; /* Make sure theme doesn't accidentally hide it */
 }
 
+/* ─── Modern Template Styles ────────────────────────────────────────────── */
+
+.modern-template {
+    padding: 0;
+    min-height: 297mm;
+    position: relative;
+    background-color: white;
+    /* overflow: hidden removed to ensure no clipping in some engines */
+}
+
+.modern-template::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 85mm;
+    background-color: #2c3e50;
+    z-index: 1; /* Above page bg, below table */
+}
+
+.modern-layout-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: transparent;
+    position: relative;
+    z-index: 2; /* Above sidebar background */
+}
+
+.modern-layout-table thead th {
+    padding: 0;
+    margin: 0;
+    background: transparent !important;
+}
+
+.modern-sidebar-spacer {
+    background-color: transparent !important;
+    height: 25mm;
+    width: 85mm !important;
+}
+
+.modern-main-spacer {
+    background-color: transparent !important;
+    height: 25mm;
+}
+
+.modern-sidebar-cell {
+    width: 85mm !important;
+    background-color: transparent !important;
+    /* Deep Slate Blue color comes from ::before */
+    color: white;
+    vertical-align: top;
+    padding: 0 10mm 20mm 10mm;
+}
+
+.modern-sidebar-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.modern-sidebar-header {
+    margin-bottom: 25px;
+}
+
+.modern-sidebar-header .name-title {
+    color: white;
+    text-align: left;
+    margin: 0;
+    font-size: 22pt;
+    line-height: 1.1;
+}
+
+.modern-line {
+    height: 3px;
+    background: #3498db;
+    /* Bright blue accent */
+    width: 40px;
+    margin-top: 15px;
+}
+
+.modern-contact-info {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 9pt;
+}
+
+.contact-label {
+    font-weight: bold;
+    color: #bdc3c7;
+    text-transform: uppercase;
+    font-size: 8pt;
+    letter-spacing: 0.5px;
+}
+
+.contact-value {
+    color: white;
+}
+
+.modern-main-cell {
+    background-color: transparent !important;
+    vertical-align: top;
+    padding: 0 15mm 20mm 15mm;
+}
+
+.modern-main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure global footer works with modern sidebar */
+/* NOTE: Footer was removed from Modern Template but leaving styles if needed for other tweaks */
+
+.modern-template .section-box {
+    margin-top: 15px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #eee;
+    padding: 0 0 5px 0;
+    width: 100%;
+    color: #2c3e50;
+    display: block;
+}
+
+.modern-sidebar-cell .section-box {
+    color: white;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    margin-top: 25px;
+}
+
+.modern-template p {
+    text-align: left;
+}
+
+.modern-template .company-header {
+    margin-top: 15px;
+    color: #2c3e50;
+}
+
+.modern-sidebar-cell .skills-list li::before,
+.modern-sidebar-cell ul.activities-list li::before {
+    color: #3498db;
+}
 /* ─── Dark Mode ─────────────────────────────────────────────────────────── */
+
 
 [data-theme="dark"] body {
     background-color: #1a1a2e;
@@ -314,7 +503,8 @@ ul.activities-list li::before {
 
 [data-theme="dark"] .lang-btn,
 [data-theme="dark"] .print-btn,
-[data-theme="dark"] .theme-btn {
+[data-theme="dark"] .theme-btn,
+[data-theme="dark"] .template-btn {
     background: #1e1e3a;
     color: #c084d8;
     border-color: #c084d8;
@@ -322,13 +512,23 @@ ul.activities-list li::before {
 
 [data-theme="dark"] .lang-btn:hover,
 [data-theme="dark"] .print-btn:hover,
-[data-theme="dark"] .theme-btn:hover {
+[data-theme="dark"] .theme-btn:hover,
+[data-theme="dark"] .template-btn:hover {
     background: #2a2a4a;
 }
 
-[data-theme="dark"] .lang-btn.active {
+[data-theme="dark"] .lang-btn.active,
+[data-theme="dark"] .template-btn.active {
     background: #541e62;
     color: white;
+}
+
+[data-theme="dark"] .modern-sidebar {
+    border-right-color: #4a4a6a;
+}
+
+[data-theme="dark"] .modern-template .section-box {
+    background: #1e1e3a;
 }
 
 /* ─── Print ──────────────────────────────────────────────────────────────── */
@@ -343,12 +543,13 @@ ul.activities-list li::before {
     }
 
     .page {
-        margin: 0;
+        margin: 0 !important;
         box-shadow: none;
         width: 100%;
         border: none;
-        position: static !important;
+        position: relative !important;
         padding-bottom: 0;
+        min-height: 297mm !important;
     }
 
     tfoot {
@@ -365,7 +566,7 @@ ul.activities-list li::before {
         left: 0 !important;
         width: 100%;
         text-align: center;
-        z-index: 100;
+        z-index: 1000 !important;
         padding: 0;
         display: block !important;
     }
@@ -373,13 +574,120 @@ ul.activities-list li::before {
     .footer-container img {
         display: block !important;
         visibility: visible !important;
+        max-width: 90% !important;
+        margin: 0 auto;
+    }
+
+    /* Modern Template Overrides */
+    .modern-template {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: 297mm !important;
+        position: relative !important;
+        background: transparent !important; /* Don't block the fixed bg */
+    }
+
+    /* Fixed Sidebar Background for Print - This spans ALL pages from top to bottom */
+    .modern-template::before {
+        content: "" !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        width: 85mm !important;
+        background-color: #2c3e50 !important;
+        z-index: 0 !important; /* Above page, below content */
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        display: block !important;
+    }
+
+    .modern-layout-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        border-spacing: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        table-layout: fixed !important;
+        background: transparent !important;
+        position: relative !important;
+        z-index: 1 !important; /* Keep text above background */
+    }
+
+    .modern-layout-table thead, 
+    .modern-layout-table thead tr,
+    .radix-template thead tr.radix-print-header-spacer {
+        height: 25mm !important;
+        min-height: 25mm !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        line-height: 0 !important;
+    }
+
+    /* Standardized spacers for ALL tables in print */
+    .print-spacer {
+        display: block !important;
+        height: 25mm !important;
+        min-height: 25mm !important;
+    }
+
+    .print-footer-spacer {
+        display: block !important;
+        height: 35mm !important;
+        min-height: 35mm !important;
+    }
+
+    /* Color BOTH the spacer (th) and the cell (td) to ensure blue sidebar reaches the absolute top */
+    .modern-sidebar-cell,
+    .modern-sidebar-spacer {
+        background-color: transparent !important; /* Let the fixed background show through */
+        width: 85mm !important;
+        border: none !important;
+        padding: 0 10mm 20mm 10mm !important;
+        vertical-align: top !important;
+    }
+
+    /* Reset spacer specifically - it should have NO padding-top, 
+       the height IS the padding from the document start */
+    .modern-sidebar-spacer, .modern-main-spacer {
+        padding: 0 !important;
+        border: none !important;
+        height: 25mm !important;
+        min-height: 25mm !important;
+    }
+
+    .modern-main-cell,
+    .modern-main-spacer {
+        background-color: transparent !important; /* Let the paper/page show through */
+        border: none !important;
+        vertical-align: top !important;
+    }
+
+    .modern-main-cell {
+        padding: 0 15mm 20mm 15mm !important;
+    }
+
+    /* Hide the footer ONLY in modern template */
+    .modern-template .footer-container {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* Ensure footer-container is globally visible for others (Radix) */
+    .radix-template .footer-container {
+        display: block !important;
+        visibility: visible !important;
     }
 
     .lang-toggle,
     .print-btn,
-    .theme-btn {
+    .theme-btn,
+    .template-toggle {
         display: none !important;
     }
+
 
     /* Always render light theme on print regardless of selected theme */
     [data-theme="dark"] body { background: white !important; }

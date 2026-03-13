@@ -145,5 +145,11 @@ export const i18nData: I18nDictionary = {
     // Languages
     LANG_1: { pt: "Português (Nativo)", en: "Portuguese (Native or Bilingual)" },
     LANG_2: { pt: "Inglês (Profissional/Fluente)", en: "English (Professional Working)" },
-    LANG_3: { pt: "Espanhol (Básico)", en: "Spanish (Limited Working)" }
+    LANG_3: { pt: "Espanhol (Básico)", en: "Spanish (Limited Working)" },
+    EMAIL_LABEL: { en: "Email", pt: "E-mail" },
+    EMAIL_VAL: { en: "michelnegrao@gmail.com", pt: "michelnegrao@gmail.com" },
+    LINKEDIN_LABEL: { en: "LinkedIn", pt: "LinkedIn" },
+    LINKEDIN_VAL: { en: "linkedin.com/in/michelnegrao", pt: "linkedin.com/in/michelnegrao" },
+    LOCATION_LABEL: { en: "Location", pt: "Localização" },
+    LOCATION_VAL: { en: "Itu, São Paulo, Brasil", pt: "Itu, São Paulo, Brasil" },
 };

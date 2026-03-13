@@ -57,11 +57,23 @@ export interface ParagraphSection {
     contentKey: string;
 }
 
+export interface PersonalInfo {
+    emailKey: string;
+    linkedinKey: string;
+    locationKey: string;
+}
+
 export type AnySection = BulletSection | ExperienceSection | ParagraphSection;
 
 // ---------------------------------------------------------------------------
 // Resume content declaration (LinkedIn Export driven)
 // ---------------------------------------------------------------------------
+
+export const personalInfo: PersonalInfo = {
+    emailKey: 'EMAIL_VAL',
+    linkedinKey: 'LINKEDIN_VAL',
+    locationKey: 'LOCATION_VAL',
+};
 
 export const resumeSections: AnySection[] = [
     {
